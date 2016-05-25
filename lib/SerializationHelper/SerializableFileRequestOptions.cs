@@ -3,12 +3,14 @@
 //    Copyright (c) Microsoft Corporation
 // </copyright>
 //------------------------------------------------------------------------------
+
+using Microsoft.WindowsAzure.Storage.File;
+
 namespace Microsoft.WindowsAzure.Storage.DataMovement.SerializationHelper
 {
     using System;
     using System.Diagnostics;
     using System.Runtime.Serialization;
-    using Microsoft.WindowsAzure.Storage.File;
 
     /// <summary>
     /// Define class to serialize FileRequestOptions instance.

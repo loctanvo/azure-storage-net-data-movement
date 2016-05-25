@@ -4,13 +4,14 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Blob;
+
 namespace Microsoft.WindowsAzure.Storage.DataMovement.SerializationHelper
 {
     using System;
     using System.Globalization;
     using System.Runtime.Serialization;
-    using Microsoft.WindowsAzure.Storage.Auth;
-    using Microsoft.WindowsAzure.Storage.Blob;
 
     /// <summary>
     /// A utility class for serializing and de-serializing <see cref="CloudBlob"/> object.

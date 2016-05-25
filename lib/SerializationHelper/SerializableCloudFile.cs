@@ -3,14 +3,16 @@
 //    Copyright (c) Microsoft Corporation
 // </copyright>
 //------------------------------------------------------------------------------
+
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.File;
+
 namespace Microsoft.WindowsAzure.Storage.DataMovement.SerializationHelper
 {
     using System;
     using System.Diagnostics;
     using System.Globalization;
     using System.Runtime.Serialization;
-    using Microsoft.WindowsAzure.Storage.Auth;
-    using Microsoft.WindowsAzure.Storage.File;
 
     /// <summary>
     /// A utility class for serializing and de-serializing <see cref="CloudFile"/> object.
