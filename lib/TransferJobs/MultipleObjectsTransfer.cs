@@ -163,7 +163,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
 
             this.Destination.Validate();
 
-            Task enumerateTask = Task.Run(() => { this.EnumerateAndTransfer(scheduler, cancellationToken); });
+            Task enumerateTask = TaskEx.Run(() => { this.EnumerateAndTransfer(scheduler, cancellationToken); }, cancellationToken);
             await enumerateTask;
 
             // wait for outstanding transfers to complete

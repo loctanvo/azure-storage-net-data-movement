@@ -134,7 +134,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
 
             this.hasWork = false;
 
-            await Task.Run(() =>
+            await TaskEx.Run(() =>
             {
                 this.NotifyStarting();
                 this.Controller.CheckCancellation();
@@ -227,7 +227,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
 
             if (!this.md5HashStream.FinishedSeparateMd5Calculator)
             {
-                await Task.Run(() =>
+                await TaskEx.Run(() =>
                 {
                     this.md5HashStream.CalculateMd5(this.Scheduler.MemoryManager, this.Controller.CheckCancellation);
                 });

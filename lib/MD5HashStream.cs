@@ -429,7 +429,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
         {
             if (!this.finishedSeparateMd5Calculator)
             {
-                await this.semaphore.WaitAsync(cancellationToken);
+                await TaskEx.Run(() => this.semaphore.Wait(cancellationToken), cancellationToken);
             }
         }
 

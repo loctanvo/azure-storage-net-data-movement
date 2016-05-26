@@ -120,7 +120,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
         {
             this.hasWork = false;
 
-            await Task.Run(() =>
+            await TaskEx.Run(() =>
             {
                 if (TransferLocationType.Stream == this.TransferJob.Destination.Type)
                 {
@@ -229,7 +229,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
             this.state = State.Write;
             this.hasWork = true;
 
-            return Task.Run(
+            return TaskEx.Run(
                 delegate
                 {
                     this.md5HashStream.CalculateMd5(this.Scheduler.MemoryManager, this.Controller.CheckCancellation);

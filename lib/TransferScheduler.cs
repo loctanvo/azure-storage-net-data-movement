@@ -350,7 +350,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
 
         private void StartSchedule()
         {
-            Task.Run(() =>
+            TaskEx.Run(() =>
                 {
                     SpinWait sw = new SpinWait();
                     while (!this.cancellationTokenSource.Token.IsCancellationRequested &&

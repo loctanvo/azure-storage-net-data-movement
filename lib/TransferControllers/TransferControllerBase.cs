@@ -196,7 +196,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
             // within this controller.
             // Trigger the CancellationTokenSource asynchronously. Otherwise, all controllers sharing the same
             // userCancellationToken will keep running until this.cancellationTokenSource.Cancel() returns.
-            Task.Run(() => 
+            TaskEx.Run(() => 
                 {
                     lock (this.cancelLock)
                     {
@@ -205,7 +205,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement.TransferControllers
                             this.cancellationTokenSource.Cancel();
                         }
                     }
-                });
+                }, CancellationToken);
         }
 
         /// <summary>
