@@ -34,7 +34,7 @@ namespace DMLibTestCodeGen
                     object valueObject = valueGen(value);
 
                     PropertyInfo prop = this.GetType().GetProperty(key);
-                    prop.SetValue(this, valueObject);
+                    prop.SetValue(this, valueObject, null);
                 }
                 else
                 {

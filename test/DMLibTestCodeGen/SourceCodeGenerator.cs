@@ -3,6 +3,10 @@
 //    Copyright (c) Microsoft Corporation
 // </copyright>
 //------------------------------------------------------------------------------
+
+using System.Linq;
+using System.Reflection;
+
 namespace DMLibTestCodeGen
 {
     using System;
@@ -198,9 +202,9 @@ namespace DMLibTestCodeGen
 
         private void AddTestCategoryAttributes(CodeMemberMethod method, MultiDirectionTestMethod testMethod)
         {
-            foreach (var customAttribute in testMethod.MethodInfoObj.CustomAttributes)
+            foreach (var customAttribute in testMethod.MethodInfoObj.GetCustomAttributes(false).Cast<CustomAttributeData>())
             {
-                if (customAttribute.AttributeType == typeof(TestCategoryAttribute))
+                if (customAttribute.GetType() == typeof(TestCategoryAttribute))
                 {
                     if (customAttribute.ConstructorArguments.Count != 1)
                     {

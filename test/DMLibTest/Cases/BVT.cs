@@ -3,6 +3,10 @@
 //    Copyright (c) Microsoft Corporation
 // </copyright>
 //------------------------------------------------------------------------------
+
+using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.WindowsAzure.Storage.File;
+
 namespace DMLibTest
 {
     using System;
@@ -11,9 +15,6 @@ namespace DMLibTest
     using System.Threading.Tasks;
     using DMLibTestCodeGen;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Microsoft.WindowsAzure.Storage.Blob;
-    using Microsoft.WindowsAzure.Storage.DataMovement;
-    using Microsoft.WindowsAzure.Storage.File;
     using MS.Test.Common.MsTestLib;
 
     [MultiDirectionTestClass]

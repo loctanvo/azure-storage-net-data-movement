@@ -32,7 +32,7 @@ namespace DMLibTestCodeGen
 
             foreach (Type type in assembly.GetTypes())
             {
-                if (null != type.GetCustomAttribute(typeof(MultiDirectionTestClassAttribute)))
+                if (null != type.GetCustomAttributes(typeof(MultiDirectionTestClassAttribute), false))
                 {
                     MultiDirectionTestClass testClass = new MultiDirectionTestClass(type);
                     codeGen.GenerateSourceCode(testClass);
